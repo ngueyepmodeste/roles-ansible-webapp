@@ -21,11 +21,11 @@
      # Run the httpd image as a container
     - name: Run the httpd image
       ansible.builtin.docker_container:
-        name: "{{ name_hote }}"
-        image: "httpd:{{ version }}"
+        name: modeste_app
+        image: httpd:latest
         state: started
         ports: 
-          - "{{ PORT }}:8080"
+          - "{{PORT_ex}}:{{PORT_in}}"
         volumes: 
           - /home/ubuntu/index.html:/usr/local/apache2/htdocs/index.html
     # Install git
