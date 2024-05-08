@@ -1,4 +1,3 @@
 PORT: 80
-name_hote: modeste_ansible
 ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 version: latest
