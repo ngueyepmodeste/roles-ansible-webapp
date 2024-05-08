@@ -1,4 +1,3 @@
-# ensemble des tache a executer pour mettre en place notre apply
   
    # Install Docker
     - name: Install Docker
