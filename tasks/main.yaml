@@ -36,4 +36,4 @@
         loop:
           - git
           - wget
-      when: ansible_distribution == "{{ user_name }}"
+      when: ansible_distribution == "{{ ansible_user }}"
