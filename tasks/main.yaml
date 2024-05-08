@@ -22,7 +22,7 @@
     - name: Run the httpd image
       ansible.builtin.docker_container:
         name: "{{ hote_name }}"
-        image: "httpd:{{ version }}"
+        image: "httpd:{{ image_version }}"
         state: started
         ports: 
           - "{{PORT_ex}}:{{PORT_in}}"
