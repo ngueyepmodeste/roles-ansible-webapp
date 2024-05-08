@@ -23,10 +23,10 @@
     - name: Run the httpd image
       ansible.builtin.docker_container:
         name: "{{name_hote}}"
-        image: httpd:"{{version}}"
+        image: "httpd:{{version}}"
         state: started
         ports: 
-          - {{PORT}}
+          - "{{PORT}}"
         volumes: 
           - /home/ubuntu/index.html:/usr/local/apache2/htdocs/index.html
     # Install git
