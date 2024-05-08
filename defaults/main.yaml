@@ -3,4 +3,4 @@ PORT_in: 8080
 ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 hote_name: modeste_app
 ansible_user: ubuntu
-version: latest
+image_version: latest
