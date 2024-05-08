@@ -21,8 +21,8 @@
      # Run the httpd image as a container
     - name: Run the httpd image
       ansible.builtin.docker_container:
-        name: "{{name_hote}}"
-        image: "httpd:{{ version }}"
+        name: '{{name_hote}}'
+        image: httpd:'{{ version }}'
         state: started
         ports: 
           - "{{ PORT }}"
