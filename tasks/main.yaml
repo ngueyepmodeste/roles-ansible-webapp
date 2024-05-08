@@ -1,0 +1,40 @@
+# ensemble des tache a executer pour mettre en place notre apply
+  
+   # Install Docker
+    - name: Install Docker
+      ansible.builtin.apt:
+        name: docker.io
+        state: present
+
+    # Start and enable Docker
+    - name: Start and enable Docker
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: true
+
+    # Generate the index.html file
+    - name: Generate the index.html file
+      ansible.builtin.template:
+        src: index.html.j2
+        dest: /home/ubuntu/index.html    
+
+     # Run the httpd image as a container
+    - name: Run the httpd image
+      ansible.builtin.docker_container:
+        name: {{name_hote}}
+        image: httpd:{{version}}
+        state: started
+        ports: 
+          - {{PORT}}
+        volumes: 
+          - /home/ubuntu/index.html:/usr/local/apache2/htdocs/index.html
+    # Install git
+    - name: Install git & wget
+      ansible.builtin.apt:
+        name: '{{item}}'
+        state: present
+        loop:
+          - git
+          - wget
+      when: ansible_distribution == "{{user_name}}"
