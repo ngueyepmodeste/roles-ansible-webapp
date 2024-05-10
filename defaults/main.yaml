@@ -1,5 +1,5 @@
 PORT_ex: 80
-PORT_in: 8080
+PORT_in: 80
 ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 hote_name: modeste_app
 ansible_user: ubuntu
