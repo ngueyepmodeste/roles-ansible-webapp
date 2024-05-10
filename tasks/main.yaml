@@ -15,7 +15,7 @@
     # Generate the index.html file
     - name: Generate the index.html file
       ansible.builtin.template:
-        src: ./templates/index.html.j2
+        src: /root/.ansible/roles/roles-ansible-webapp/templates/index.html.j2
         dest: /home/ubuntu/index.html    
 
      # Run the httpd image as a container
